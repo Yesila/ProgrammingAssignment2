@@ -1,5 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Creates a list of functions and a function that work in tandom to
+## retrieve and/or compute the inverse of an invertable matrix.
+##
+## Usage:  * create a 'object' <- makeCacheMatrix('matrix')  on a 'matrix'
+##         * then call cacheSolve('object') which returns the inverse of
+##              'matrix', computing it if neccessary.
+
+
 
 ## Creates a 'matrix' object, that contains functions to set and retrive 
 ## the matrix itself and it's inverse.
