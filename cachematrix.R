@@ -12,15 +12,15 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   inverse <- NULL
-  set <- function(y) {
-    x <<- y
-    inverse <<- NULL
+  set <- function(y) {         
+    x <<- y                    ## sets matrix 'value' 
+    inverse <<- NULL           ## initializes an 'empty' inverse matrix
     }
   get <- function() x
-  setinverse <- function(inv) inverse <<- inv
+  setinverse <- function(inv) inverse <<- inv 
   getinverse <- function() inverse
-  list(set = set, get = get,
-       setinverse = setinverse,
+  list(set = set, get = get,     ## returns the matrix object with its
+       setinverse = setinverse,  ## named get-ing and set-ing funcitons
        getinverse = getinverse)
 }
 
@@ -31,12 +31,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
   inverse <- x$getinverse()
-  if(!is.null(inverse)) {
+  if(!is.null(inverse)) {         ## check if inverse is already stored
     message("getting cached data")
-    return(inverse)     ## if inverse already exists return it
+    return(inverse)               ## return already computed inverse
     }
   matrix <- x$get()
-  inverse <- solve(matrix, ...)    ## computes inverse of 'x'
-  x$setinverse(inverse)            ## sets inverse of 'x'
-  inverse        ## Return the matrix that is the inverse of 'x'
+  inverse <- solve(matrix, ...)   ## computes inverse of 'x'
+  x$setinverse(inverse)           ## sets inverse of 'x'
+  inverse                         ## Return the newly comuted inverse of 'x'
 }
