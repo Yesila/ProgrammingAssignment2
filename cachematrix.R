@@ -38,5 +38,5 @@ cacheSolve <- function(x, ...) {
   matrix <- x$get()
   inverse <- solve(matrix, ...)   ## computes inverse of 'x'
   x$setinverse(inverse)           ## sets inverse of 'x'
-  inverse                         ## Return the newly comuted inverse of 'x'
+  inverse                         ## Return the newly computed inverse of 'x'
 }
